@@ -1394,7 +1394,10 @@ This would probably be better done with a diff.  Oh, well."
   (dp-pm) ;; concept-loop
   (search-forward "\\kern-7pt" nil t)
   (replace-match "")
-  (dp-search-delete "\\def\\subOne" 2) ;; dict-flow
+  (dp-pm) ;; dict-flow
+  (search-forward "{\\it xxx}" nil t)
+  (replace-match "\\i{xxx}" t t)
+  (dp-search-delete "\\def\\subOne" 2)
   (dp-pm) ;; concept-bvl
   (search-forward "{\\def\\TVar{\\curly" nil t)
   (forward-line -1)
